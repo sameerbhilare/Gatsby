@@ -5,11 +5,15 @@ import { Link, graphql } from "gatsby"
 import RecipesList from "../components/RecipesList"
 import SEO from "../components/SEO"
 
-const About = ({
-  data: {
-    allContentfulRecipe: { nodes: recipes },
-  },
-}) => {
+const About = props => {
+  //console.log({props})
+
+  const {
+    data: {
+      allContentfulRecipe: { nodes: recipes },
+    },
+  } = props
+
   return (
     <Layout>
       <SEO title="About" />
@@ -45,6 +49,19 @@ const About = ({
   )
 }
 
+/*
+  Gatsby behind the scenes will execute below query and the result of it will be available to
+  our component above on 'props.data'.
+  We just need to export a graphql query. The name of the exported query can be anything. e.g. here its 'query'
+
+  This is a 'Page Query'. 
+  Page Queries can only be used inside a Page component, it can NOT be used in any other components.
+  This is because in the page queries, we can pass variables.
+
+  There is also another type of query called 'Static Query'.
+  Static Query can be used in normal components (e.g. AllRecipes.js) as well as Page components.
+  Typically Static Query is used with useStaticQuery() React hoook.
+*/
 export const query = graphql`
   {
     allContentfulRecipe(
