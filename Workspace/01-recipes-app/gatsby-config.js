@@ -8,11 +8,12 @@ require("dotenv").config({
 })
 
 module.exports = {
-  /* Your site config here */
+  /* our site config */
   siteMetadata: {
     title: "Simply Recipes",
     description: "Nice and clean recipes site",
-    author: "@johnsmilga",
+    author: "@sameerbhilare",
+
     person: { name: "john", age: 32 },
     simpleData: ["item 1", "item 2"],
     complexData: [
@@ -20,6 +21,7 @@ module.exports = {
       { name: "susan", age: 21 },
     ],
   },
+
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
