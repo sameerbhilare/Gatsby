@@ -5,7 +5,17 @@
   and 'title' is property on that a recipe.
 
   With this, Gatsby will generate pages for all those recipes behind the scenes.
-  by first executing 'allContentfulRecipe' query and then creating pages with names of recipes' 'title'
+  First Gatsby will execute below query
+    {
+      allContentfulRecipe {
+        nodes {
+          title
+        }
+      }
+    }
+ And then will create pages with (slugified) names of recipes' 'title'.
+    More specifically, Gatsby will slugify that 'title' and will make it url friendly.
+    e.g. if title is 'Vegetable Soup', it will be slugified to 'vegetable-soup'
 */
 import React from "react"
 import { graphql, Link } from "gatsby"
@@ -120,6 +130,8 @@ const RecipeTemplate = ({ data }) => {
   )
 }
 
+// get data for single recipe
+// here '$title' is available in the page params objects.
 export const query = graphql`
   query getSingleRecipe($title: String) {
     contentfulRecipe(title: { eq: $title }) {
