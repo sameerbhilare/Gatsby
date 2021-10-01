@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import slugify from "slugify"
+
+// initial state for props.recipes = []
 const RecipesList = ({ recipes = [] }) => {
   return (
     <div className="recipes-list">
@@ -12,7 +14,7 @@ const RecipesList = ({ recipes = [] }) => {
         const slug = slugify(title, { lower: true })
         return (
           <Link key={id} to={`/${slug}`} className="recipe">
-            {/* Render image */}
+            {/* Render dynamic image */}
             <GatsbyImage
               image={pathToImage}
               className="recipe-img"
