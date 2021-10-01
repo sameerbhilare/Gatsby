@@ -1,3 +1,12 @@
+/*
+  Name of this file is quite special - {ContentfulRecipe.title}.js
+  Here 'ContentfulRecipe' is because our graphgql query for recipes is allContentfulRecipe
+    so we have to use 'ContentfulRecipe' without the word 'all'
+  and 'title' is property on that a recipe.
+
+  With this, Gatsby will generate pages for all those recipes behind the scenes.
+  by first executing 'allContentfulRecipe' query and then creating pages with names of recipes' 'title'
+*/
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
