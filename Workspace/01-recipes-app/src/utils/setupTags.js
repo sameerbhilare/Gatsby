@@ -10,11 +10,14 @@ const setupTags = recipes => {
       }
     })
   })
+  //console.log(allTags)
+
   const newTags = Object.entries(allTags).sort((a, b) => {
-    const [firstTag] = a
-    const [secondTag] = b
-    return firstTag.localeCompare(secondTag)
+    const [firstTag] = a // array destructuring
+    const [secondTag] = b // array destructuring
+    return firstTag.localeCompare(secondTag) // compare strings
   })
+  //console.log(newTags)
 
   return newTags
 }
