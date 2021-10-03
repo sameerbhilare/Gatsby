@@ -19,6 +19,7 @@ const TagTemplate = ({ data, pageContext }) => {
   )
 }
 
+// 'tag' variable is made available from 'context' from gatsby-node.js
 export const query = graphql`
   query GetRecipeByTag($tag: String) {
     allContentfulRecipe(
