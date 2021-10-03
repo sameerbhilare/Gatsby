@@ -42,7 +42,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_API_KEY,
       },
     },
-    // to prefetch the fonts
+    // to prefetch/preload the fonts so that they are available right before content is rendered
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
