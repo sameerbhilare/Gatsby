@@ -27,7 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/tags/${tagSlug}`,
         // template to create a tag page. Using path, since we are in nodejs code
         component: path.resolve(`src/templates/tag-template.js`),
-        //  Add optional context data to be inserted as props into the page component (tag-template.js).
+        //  Add optional context data to be inserted as props (props.pageContext) into the page component (tag-template.js).
         // The context data can also be used as arguments to the page GraphQL query
         context: {
           tag: tag,
