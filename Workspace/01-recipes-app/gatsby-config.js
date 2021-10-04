@@ -60,6 +60,7 @@ module.exports = {
         },
       },
     },
+    // for SEO
     `gatsby-plugin-react-helmet`,
   ],
 }

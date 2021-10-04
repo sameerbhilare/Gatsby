@@ -6,10 +6,11 @@ import SEO from "../components/SEO"
 export default function Home() {
   return (
     <Layout>
+      {/* Using SEO component */}
       <SEO title="Home " />
       <main className="page">
         <header className="hero">
-        {/* If you are using an image that will be the same each time the component is used, 
+          {/* If you are using an image that will be the same each time the component is used, 
         such as a logo or front page hero image, you can use the StaticImage component. */}
           <StaticImage
             src="../assets/images/main.jpeg"
