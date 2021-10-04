@@ -24,7 +24,12 @@ const Contact = ({ data }) => {
             </p>
           </article>
           <article>
-            <form className="form contact-form">
+            {/* Using formspree for form submissions and storing form data */}
+            <form
+              className="form contact-form"
+              action="https://formspree.io/f/mayakbol"
+              method="POST"
+            >
               <div className="form-row">
                 <label htmlFor="name">your name</label>
                 <input type="text" name="name" id="name" />
