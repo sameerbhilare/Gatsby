@@ -9,8 +9,8 @@ module.exports = {
   siteMetadata: {
     title: `WebDev Portfolio`,
     description: `Awesome WebDev Portfolio built with Gatsby and Strapi`,
-    titleTemplate: `%s | WebDev Portfolio`,
-    //url: `https://temp-strapi-portfolio.netlify.app`,
+    titleTemplate: `%s | WebDev Portfolio`, // used by gatsby-plugin-react-helmet
+    url: `https://sameerbhilare-portfolio-gatby-strapi.netlify.app`, // no '/' at the end ***
     twitterUsername: `@sameer59`,
     image: `/mainImg.png`,
   },
@@ -32,7 +32,7 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`job`, `project`],
+        contentTypes: [`job`, `project`], // as configured in strapi admin
         //If using single types place them in this array.
         singleTypes: [`about`],
         // Possibility to login with a strapi user, when content types are not publically available (optional).

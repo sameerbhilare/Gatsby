@@ -4,6 +4,7 @@ import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
+// this is available due to strapi integration
 const query = graphql`
   {
     allStrapiJob(sort: { fields: created_at, order: DESC }) {
@@ -25,8 +26,11 @@ const Jobs = () => {
   const {
     allStrapiJob: { nodes: jobs },
   } = data
+
+  // using state to show which job to display based on button click
   const [value, setValue] = React.useState(0)
   const { company, position, date, desc } = jobs[value]
+
   return (
     <section className="section jobs">
       <Title title="experience" />
